@@ -7,3 +7,4 @@ prettytable
 xgboost
 googledrivedownloader
 nltk
+tensorflow
