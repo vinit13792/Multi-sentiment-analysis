@@ -39,8 +39,13 @@ import joblib
 import os
 
 path = 'data'
-os.mkdir(path)
 
+try:
+    os.mkdir(path)
+except FileExistsError:
+    cwd = os.getcwd()
+    os.chdir(cwd)
+    
 stop_words = set(stopwords.words('english'))
 
 gdd.download_file_from_google_drive(file_id='1aQ7Ns6DYhq3MKSoeQEG3gl7OLKgtRT44',
