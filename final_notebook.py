@@ -289,7 +289,7 @@ def get_pos_vec(df, feature):
 
   return pos_cat
 
-unigram_feat_multi = pickle.load(open('unigram_feat_multi.pkl', 'rb'))
+unigram_feat_multi = pickle.load(open('../data/unigram_feat_multi.pkl', 'rb'))
 
 def text_to_seq(vocab, data):
 
