@@ -77,7 +77,7 @@ zipfiles = glob.glob("/app/multi-sentiment-analysis/*.zip")
 
 for file in zipfiles:
     with zipfile.ZipFile(f'/app/multi-sentiment-analysis/{files}', 'r') as zip_ref:
-        zip_ref.extractall(/app/multi-sentiment-analysis/)
+        zip_ref.extractall('/app/multi-sentiment-analysis/')
 st.write(glob.glob('/app/multi-sentiment-analysis/*')
                        
 
