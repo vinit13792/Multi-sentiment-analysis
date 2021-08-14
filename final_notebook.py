@@ -10,7 +10,7 @@ from google_drive_downloader import GoogleDriveDownloader as gdd
 import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
 nltk.download('stopwords')
-
+import zipfile
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('wordnet')
@@ -38,52 +38,50 @@ import string
 import re
 import joblib
 import os
-
-path = 'data'
-
-st.write(os.getcwd())
+import glob
     
 stop_words = set(stopwords.words('english'))
 
 gdd.download_file_from_google_drive(file_id='1aQ7Ns6DYhq3MKSoeQEG3gl7OLKgtRT44',
                                     dest_path='/app/multi-sentiment-analysis/greet models.zip',
                                     unzip=True)
-st.write('downloaded greet models')
 gdd.download_file_from_google_drive(file_id='1Lz-bjuFshJY8LiXFgKpTZodqJqq6IYGX',
                                     dest_path='/app/multi-sentiment-analysis/backstory models.zip',
                                     unzip=True)
-st.write('downloaded back models')
 gdd.download_file_from_google_drive(file_id='1rja_wtez5BrfowiXIP91mveDAukMJTjH',
                                     dest_path='/app/multi-sentiment-analysis/justifn models.zip',
                                     unzip=True)
-st.write('downloaded justifn models')
 gdd.download_file_from_google_drive(file_id='1jyhHrzV4n26bamkj9Tlx-C-hI6SSy0DJ',
                                     dest_path='/app/multi-sentiment-analysis/Rant models.zip',
                                     unzip=True)
-st.write('downloaded rant models')
 gdd.download_file_from_google_drive(file_id='19iQ0Weweam2gT5_9P8G6rry6U6fjYpSf',
                                     dest_path='/app/multi-sentiment-analysis/grat models.zip',
                                     unzip=True)
-st.write('downloaded other models')
 gdd.download_file_from_google_drive(file_id='1IVi2cGx66iXuyx-Q8UzdW55VtSf-E-ul',
                                     dest_path='/app/multi-sentiment-analysis/other models.zip',
                                     unzip=True)
-st.write('downloaded expemo models')
 gdd.download_file_from_google_drive(file_id='1pWLS_D8qPkbGHVL7TI0h_KNiVCjTKgdJ',
                                     dest_path='/app/multi-sentiment-analysis/expemo models.zip',
                                     unzip=True)
-st.write('downloaded unigrams')
 gdd.download_file_from_google_drive(file_id='1bY96HSWMuatJ8cprhWHVcTzUSK8farhh',
                                     dest_path='/app/multi-sentiment-analysis/unigrams_feat_multi.pkl',
                                     unzip=True) # unigram dictionary
-st.write('downloaded normaliser')
 gdd.download_file_from_google_drive(file_id='1nZk37wAd4BfUCNrLaquKpfsrXnWLG-Fu',
                                     dest_path='/app/multi-sentiment-analysis/norm_trans.sav',
                                     unzip=True) # normaliser fitted on training data 
-import os
-files = [f for f in os.listdir('.') if os.path.isfile(f)]
-for f in files:
-    st.write(f)
+
+
+
+# All files ending with .txt
+zipfiles = glob.glob("/app/multi-sentiment-analysis/*.zip")
+
+for file in zipfiles:
+    with zipfile.ZipFile(f'/app/multi-sentiment-analysis/{files}, 'r') as zip_ref:
+        zip_ref.extractall(/app/multi-sentiment-analysis/)
+st.write(glob.glob('/app/multi-sentiment-analysis/*')
+                       
+
+
 def decontracted(phrase):
     # specific
     phrase = re.sub(r"won't", "will not", phrase)
