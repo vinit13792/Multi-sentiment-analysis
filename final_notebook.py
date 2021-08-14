@@ -36,6 +36,10 @@ import pickle
 import string
 import re
 import joblib
+import os
+
+path = 'data'
+os.mkdir(path)
 
 stop_words = set(stopwords.words('english'))
 
