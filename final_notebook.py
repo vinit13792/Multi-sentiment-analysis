@@ -297,7 +297,7 @@ def text_to_seq(vocab, data):
 
   return np.array(sequences)
 
-normaliser = joblib.load('./data/norm_trans.sav')
+normaliser = joblib.load('data/norm_trans.sav')
 
 def predict(X):
 
@@ -468,7 +468,7 @@ def preprocess(X):
   df['GFI'] = pos_cat.get('GFI')
   df['EI'] = pos_cat.get('EI')
   
-  unigram_feat_multi = pickle.load(open('./data/unigram_feat_multi.pkl', 'rb'))
+  unigram_feat_multi = pickle.load(open('data/unigram_feat_multi.pkl', 'rb'))
   puncs = [i for i in string.punctuation]
   unigram_feat_multi = puncs + list(unigram_feat_multi)
   dictionary_multi = list(unigram_feat_multi)
