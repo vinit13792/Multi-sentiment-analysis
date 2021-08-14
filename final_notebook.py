@@ -76,9 +76,9 @@ gdd.download_file_from_google_drive(file_id='1nZk37wAd4BfUCNrLaquKpfsrXnWLG-Fu',
 zipfiles = glob.glob("/app/multi-sentiment-analysis/*.zip")
 st.write(zipfiles[0])
 for file in zipfiles:
-    with zipfile.ZipFile(f'/app/multi-sentiment-analysis/{file}', 'r') as zip_ref:
+    with zipfile.ZipFile(f'{file}', 'r') as zip_ref:
         zip_ref.extractall('/app/multi-sentiment-analysis/')
-#st.write(glob.glob('/app/multi-sentiment-analysis/*'))
+st.write(glob.glob('/app/multi-sentiment-analysis/*'))
                        
 
 
