@@ -1,3 +1,4 @@
+tensorflow
 streamlit
 pandas
 numpy
@@ -7,4 +8,3 @@ prettytable
 xgboost
 googledrivedownloader
 nltk
-tensorflow
