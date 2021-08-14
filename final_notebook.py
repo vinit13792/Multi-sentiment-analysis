@@ -19,50 +19,40 @@ from sklearn.svm import SVC
 from sklearn.calibration import CalibratedClassifierCV
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import pandas as pd
-import nltk
 import numpy as np
 from prettytable import PrettyTable
-from tqdm.notebook import tqdm as tqdm
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize, sent_tokenize
 import itertools
 from sklearn.preprocessing import Normalizer
-from nltk.corpus import stopwords
 import pickle
 import string
-from nltk.tokenize import word_tokenize, sent_tokenize
-nltk.download('stopwords')
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('wordnet')
 import re
 import joblib
 
 stop_words = set(stopwords.words('english'))
 
-!gdown --id '1aQ7Ns6DYhq3MKSoeQEG3gl7OLKgtRT44'
-!unzip 'greet models.zip' -d 'content/'
+gdown --id '1aQ7Ns6DYhq3MKSoeQEG3gl7OLKgtRT44'
+unzip 'greet models.zip' -d 'content/'
 
-!gdown --id '1Lz-bjuFshJY8LiXFgKpTZodqJqq6IYGX'
-!unzip 'backstory models.zip' -d 'content/'
+gdown --id '1Lz-bjuFshJY8LiXFgKpTZodqJqq6IYGX'
+unzip 'backstory models.zip' -d 'content/'
 
-!gdown --id '1rja_wtez5BrfowiXIP91mveDAukMJTjH'
-!unzip 'justifn models.zip' -d 'content/'
+gdown --id '1rja_wtez5BrfowiXIP91mveDAukMJTjH'
+unzip 'justifn models.zip' -d 'content/'
 
-!gdown --id '1jyhHrzV4n26bamkj9Tlx-C-hI6SSy0DJ'
-!unzip 'Rant models.zip' -d 'content/'
+gdown --id '1jyhHrzV4n26bamkj9Tlx-C-hI6SSy0DJ'
+unzip 'Rant models.zip' -d 'content/'
 
-!gdown --id '19iQ0Weweam2gT5_9P8G6rry6U6fjYpSf'
-!unzip 'grat models.zip' -d 'content/'
+gdown --id '19iQ0Weweam2gT5_9P8G6rry6U6fjYpSf'
+unzip 'grat models.zip' -d 'content/'
 
-!gdown --id '1IVi2cGx66iXuyx-Q8UzdW55VtSf-E-ul'
-!unzip 'other models.zip' -d 'content/'
+gdown --id '1IVi2cGx66iXuyx-Q8UzdW55VtSf-E-ul'
+unzip 'other models.zip' -d 'content/'
 
-!gdown --id '1pWLS_D8qPkbGHVL7TI0h_KNiVCjTKgdJ'
-!unzip 'expemo models.zip' -d 'content/'
+gdown --id '1pWLS_D8qPkbGHVL7TI0h_KNiVCjTKgdJ'
+unzip 'expemo models.zip' -d 'content/'
 
-!gdown --id '1bY96HSWMuatJ8cprhWHVcTzUSK8farhh' # unigrams trained from training data
-!gdown --id '1nZk37wAd4BfUCNrLaquKpfsrXnWLG-Fu' # normaliser fitted on training data
+gdown --id '1bY96HSWMuatJ8cprhWHVcTzUSK8farhh' # unigrams trained from training data
+gdown --id '1nZk37wAd4BfUCNrLaquKpfsrXnWLG-Fu' # normaliser fitted on training data
 
 def decontracted(phrase):
     # specific
