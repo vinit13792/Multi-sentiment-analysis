@@ -40,39 +40,39 @@ import joblib
 stop_words = set(stopwords.words('english'))
 
 gdd.download_file_from_google_drive(file_id='1aQ7Ns6DYhq3MKSoeQEG3gl7OLKgtRT44',
-                                    dest_path='./data/greet models.zip',
+                                    dest_path='/data/greet models.zip',
                                     unzip=True)
 
 gdd.download_file_from_google_drive(file_id='1Lz-bjuFshJY8LiXFgKpTZodqJqq6IYGX',
-                                    dest_path='./data/backstory models.zip',
+                                    dest_path='data/backstory models.zip',
                                     unzip=True)
 
 gdd.download_file_from_google_drive(file_id='1rja_wtez5BrfowiXIP91mveDAukMJTjH',
-                                    dest_path='./data/justifn models.zip',
+                                    dest_path='data/justifn models.zip',
                                     unzip=True)
 
 gdd.download_file_from_google_drive(file_id='1jyhHrzV4n26bamkj9Tlx-C-hI6SSy0DJ',
-                                    dest_path='./data/Rant models.zip',
+                                    dest_path='data/Rant models.zip',
                                     unzip=True)
 
 gdd.download_file_from_google_drive(file_id='19iQ0Weweam2gT5_9P8G6rry6U6fjYpSf',
-                                    dest_path='./data/grat models.zip',
+                                    dest_path='data/grat models.zip',
                                     unzip=True)
 
 gdd.download_file_from_google_drive(file_id='1IVi2cGx66iXuyx-Q8UzdW55VtSf-E-ul',
-                                    dest_path='./data/other models.zip',
+                                    dest_path='data/other models.zip',
                                     unzip=True)
 
 gdd.download_file_from_google_drive(file_id='1pWLS_D8qPkbGHVL7TI0h_KNiVCjTKgdJ',
-                                    dest_path='./data/expemo models.zip',
+                                    dest_path='data/expemo models.zip',
                                     unzip=True)
 
 gdd.download_file_from_google_drive(file_id='1bY96HSWMuatJ8cprhWHVcTzUSK8farhh',
-                                    dest_path='./data/',
+                                    dest_path='/data/',
                                     unzip=True) # unigram dictionary
 
 gdd.download_file_from_google_drive(file_id='1nZk37wAd4BfUCNrLaquKpfsrXnWLG-Fu',
-                                    dest_path='./data/',
+                                    dest_path='/data/',
                                     unzip=True) # normaliser fitted on training data 
 
 def decontracted(phrase):
