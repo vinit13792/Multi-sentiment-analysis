@@ -40,7 +40,7 @@ import joblib
 stop_words = set(stopwords.words('english'))
 
 gdd.download_file_from_google_drive(file_id='1aQ7Ns6DYhq3MKSoeQEG3gl7OLKgtRT44',
-                                    dest_path='/data/greet models.zip',
+                                    dest_path='data/greet models.zip',
                                     unzip=True)
 
 gdd.download_file_from_google_drive(file_id='1Lz-bjuFshJY8LiXFgKpTZodqJqq6IYGX',
