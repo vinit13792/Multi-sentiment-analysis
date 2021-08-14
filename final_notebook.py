@@ -16,6 +16,7 @@ nltk.download('averaged_perceptron_tagger')
 nltk.download('wordnet')
 from nltk.corpus import stopwords
 
+import streamlit as st
 import joblib
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
@@ -40,6 +41,7 @@ import os
 
 path = 'data'
 
+st.write(os.getcwd())
 try:
     os.mkdir(path)
 except FileExistsError:
