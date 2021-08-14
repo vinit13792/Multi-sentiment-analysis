@@ -74,11 +74,11 @@ gdd.download_file_from_google_drive(file_id='1pWLS_D8qPkbGHVL7TI0h_KNiVCjTKgdJ',
                                     unzip=True)
 st.write('downloaded unigrams')
 gdd.download_file_from_google_drive(file_id='1bY96HSWMuatJ8cprhWHVcTzUSK8farhh',
-                                    dest_path='/app/multi-sentiment-analysis/',
+                                    dest_path='/app/multi-sentiment-analysis/unigrams_feat_multi.pkl',
                                     unzip=True) # unigram dictionary
 st.write('downloaded normaliser')
 gdd.download_file_from_google_drive(file_id='1nZk37wAd4BfUCNrLaquKpfsrXnWLG-Fu',
-                                    dest_path='/app/multi-sentiment-analysis/',
+                                    dest_path='/app/multi-sentiment-analysis/norm_trans.sav',
                                     unzip=True) # normaliser fitted on training data 
 import os
 files = [f for f in os.listdir('.') if os.path.isfile(f)]
