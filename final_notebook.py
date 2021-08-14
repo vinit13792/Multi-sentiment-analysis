@@ -68,11 +68,11 @@ gdd.download_file_from_google_drive(file_id='1pWLS_D8qPkbGHVL7TI0h_KNiVCjTKgdJ',
                                     unzip=True)
 
 gdd.download_file_from_google_drive(file_id='1bY96HSWMuatJ8cprhWHVcTzUSK8farhh',
-                                    dest_path='/data/',
+                                    dest_path='data/',
                                     unzip=True) # unigram dictionary
 
 gdd.download_file_from_google_drive(file_id='1nZk37wAd4BfUCNrLaquKpfsrXnWLG-Fu',
-                                    dest_path='/data/',
+                                    dest_path='data/',
                                     unzip=True) # normaliser fitted on training data 
 
 def decontracted(phrase):
