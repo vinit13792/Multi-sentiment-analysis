@@ -7,8 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1441TTlaTX6ZMeIWwBJstFVASNYmO2D_U
 """
 
-!pip install catboost
-
 import joblib
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
