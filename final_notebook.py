@@ -80,7 +80,10 @@ st.write('downloaded normaliser')
 gdd.download_file_from_google_drive(file_id='1nZk37wAd4BfUCNrLaquKpfsrXnWLG-Fu',
                                     dest_path='/app/multi-sentiment-analysis/',
                                     unzip=True) # normaliser fitted on training data 
-
+import os
+files = [f for f in os.listdir('.') if os.path.isfile(f)]
+for f in files:
+    st.write(f)
 def decontracted(phrase):
     # specific
     phrase = re.sub(r"won't", "will not", phrase)
