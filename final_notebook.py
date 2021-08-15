@@ -164,7 +164,7 @@ def get_word_count(data, feature):
 def pos_count(data, feature):
 
   POS_List = ['JJ', 'JJR', 'JJS', 'NN', 'NNS', 'PRP', 'PRPS', 'RB', 'RBR', 'RP', 'UH', 'VB', 'VBD', 'VBG', 'VBN', 'VBP','VBZ', 'WP', 'WP$']
-
+  global tagged
   pos_per_text = defaultdict(list)
 
   for i in range(data.shape[0]):
@@ -184,8 +184,8 @@ def pos_count(data, feature):
   
       #  Using a Tagger. Which is part-of-speech 
       # tagger or POS-tagger. 
-      tagged1 = nltk.pos_tag(wordsList)
-    info=[tag[1] for tag in tagged1]
+      tagged = nltk.pos_tag(wordsList)
+    info=[tag[1] for tag in tagged]
     #print(info)
     
     
@@ -241,9 +241,9 @@ def get_pos_vec(df, feature):
   
       #  Using a Tagger. Which is part-of-speech 
       # tagger or POS-tagger. 
-      tagged2 = nltk.pos_tag(wordsList)
+      tagged = nltk.pos_tag(wordsList)
 
-    pattern = [tag[1] for tag in tagged2]
+    pattern = [tag[1] for tag in tagged]
     
     
     pat_check_ci = [pat for pat in pattern if pat in ci]
