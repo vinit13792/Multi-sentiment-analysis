@@ -184,8 +184,8 @@ def pos_count(data, feature):
   
       #  Using a Tagger. Which is part-of-speech 
       # tagger or POS-tagger. 
-      tagged = nltk.pos_tag(wordsList)
-    info=[tag[1] for tag in tagged]
+      tagged1 = nltk.pos_tag(wordsList)
+    info=[tag[1] for tag in tagged1]
     #print(info)
     
     
@@ -241,9 +241,9 @@ def get_pos_vec(df, feature):
   
       #  Using a Tagger. Which is part-of-speech 
       # tagger or POS-tagger. 
-      tagged = nltk.pos_tag(wordsList)
+      tagged2 = nltk.pos_tag(wordsList)
 
-    pattern = [tag[1] for tag in tagged]
+    pattern = [tag[1] for tag in tagged2]
     
     
     pat_check_ci = [pat for pat in pattern if pat in ci]
