@@ -79,7 +79,8 @@ for file in zipfiles:
     with zipfile.ZipFile(f'{file}', 'r') as zip_ref:
         zip_ref.extractall('/app/multi-sentiment-analysis/')                       
 
-st.write(os.getcwd())
+for file in os.listdir(os.getcwd()):
+    st.write(file)
 def decontracted(phrase):
     # specific
     phrase = re.sub(r"won't", "will not", phrase)
