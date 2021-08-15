@@ -501,7 +501,7 @@ def preprocess(X):
   predict(query)
   return
 
-X = st.text_input()
+X = st.text_input(label='Enter your text here')
 
 st.write(preprocess(X))
 
