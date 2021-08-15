@@ -71,7 +71,6 @@ gdd.download_file_from_google_drive(file_id='1nZk37wAd4BfUCNrLaquKpfsrXnWLG-Fu',
                                     unzip=True) # normaliser fitted on training data 
 
 
-import os
 # All files ending with .txt
 zipfiles = glob.glob("/app/multi-sentiment-analysis/*.zip")
 #st.write(zipfiles[0])
@@ -79,8 +78,8 @@ for file in zipfiles:
     with zipfile.ZipFile(f'{file}', 'r') as zip_ref:
         zip_ref.extractall('/app/multi-sentiment-analysis/')                       
 
-for file in os.listdir(os.getcwd()):
-    st.write(file)
+#for file in os.listdir(os.getcwd()):
+#    st.write(file)
 def decontracted(phrase):
     # specific
     phrase = re.sub(r"won't", "will not", phrase)
@@ -307,14 +306,14 @@ normaliser = joblib.load('/app/multi-sentiment-analysis/norm_trans.sav')
 
 def predict(X):
 
-  greet_cat = joblib.load('greet models/calib_catd1_greet.sav')
-  greet_rf = joblib.load('greet models/calib_d1_greetrf.sav')
-  greet_xgb = joblib.load('greet models/calib_d1xgb_greet.sav')
-  greet_dtc = joblib.load('greet models/calib_dtc_greet.sav')
-  greet_sgd = joblib.load('greet models/calib_sgdd1_greet.sav')
-  greet_svm = joblib.load('greet models/calib_svm_d1_greet.sav')
-  greet_svmrbf = joblib.load('greet models/calib_svmrbf_d1_greet.sav')
-  greet_meta = joblib.load('greet models/calib_meta_lrgreet.sav')
+  greet_cat = joblib.load('/app/multi-sentiment-analysis/greet models/calib_catd1_greet.sav')
+  greet_rf = joblib.load('/app/multi-sentiment-analysis/greet models/calib_d1_greetrf.sav')
+  greet_xgb = joblib.load('/app/multi-sentiment-analysis/greet models/calib_d1xgb_greet.sav')
+  greet_dtc = joblib.load('/app/multi-sentiment-analysis/greet models/calib_dtc_greet.sav')
+  greet_sgd = joblib.load('/app/multi-sentiment-analysis/greet models/calib_sgdd1_greet.sav')
+  greet_svm = joblib.load('/app/multi-sentiment-analysis/greet models/calib_svm_d1_greet.sav')
+  greet_svmrbf = joblib.load('/app/multi-sentiment-analysis/greet models/calib_svmrbf_d1_greet.sav')
+  greet_meta = joblib.load('/app/multi-sentiment-analysis/greet models/calib_meta_lrgreet.sav')
 
   greet_cat_pred = greet_cat.predict_proba(X)[:,1]
   greet_rf_pred = greet_rf.predict_proba(X)[:,1]
@@ -330,14 +329,14 @@ def predict(X):
   
   greet_meta_preds = np.round(greet_meta.predict_proba(greet_meta_array)[:,1],2)
 
-  back_cat = joblib.load('backstory models/calib_catd1_back.sav')
-  back_rf = joblib.load('backstory models/calib_d1_backrf.sav')
-  back_xgb = joblib.load('backstory models/calib_d1xgb_back.sav')
-  back_dtc = joblib.load('backstory models/calib_dtc_back.sav')
-  back_sgd = joblib.load('backstory models/calib_sgdd1_back.sav')
-  back_svm = joblib.load('backstory models/calib_svm_d1_back.sav')
-  back_svmrbf = joblib.load('backstory models/calib_svmrbf_d1_back.sav')
-  back_meta = joblib.load('backstory models/calib_meta2_lrback.sav')
+  back_cat = joblib.load('/app/multi-sentiment-analysis/backstory models/calib_catd1_back.sav')
+  back_rf = joblib.load('/app/multi-sentiment-analysis/backstory models/calib_d1_backrf.sav')
+  back_xgb = joblib.load('/app/multi-sentiment-analysis/backstory models/calib_d1xgb_back.sav')
+  back_dtc = joblib.load('/app/multi-sentiment-analysis/backstory models/calib_dtc_back.sav')
+  back_sgd = joblib.load('/app/multi-sentiment-analysis/backstory models/calib_sgdd1_back.sav')
+  back_svm = joblib.load('/app/multi-sentiment-analysis/backstory models/calib_svm_d1_back.sav')
+  back_svmrbf = joblib.load('/app/multi-sentiment-analysis/backstory models/calib_svmrbf_d1_back.sav')
+  back_meta = joblib.load('/app/multi-sentiment-analysis/backstory models/calib_meta2_lrback.sav')
 
   back_cat_pred = back_cat.predict_proba(X)[:,1]
   back_rf_pred = back_rf.predict_proba(X)[:,1]
@@ -353,14 +352,14 @@ def predict(X):
   
   back_meta_preds = np.round(back_meta.predict_proba(back_meta_array)[:,1],2)
 
-  justifn_cat = joblib.load('justifn models/calib_catd1_justifn.sav')
-  justifn_rf = joblib.load('justifn models/calib_d1_justifnrf.sav')
-  justifn_xgb = joblib.load('justifn models/calib_d1xgb_justifn.sav')
-  justifn_dtc = joblib.load('justifn models/calib_dtc_justifn.sav')
-  justifn_sgd = joblib.load('justifn models/calib_sgdd1_justifn.sav')
-  justifn_svm = joblib.load('justifn models/calib_svm_d1_justifn.sav')
-  justifn_svmrbf = joblib.load('justifn models/calib_svmrbf_d1_justifn.sav')
-  justifn_meta = joblib.load('justifn models/calib_meta2_lrjustifn.sav')
+  justifn_cat = joblib.load('/app/multi-sentiment-analysis/justifn models/calib_catd1_justifn.sav')
+  justifn_rf = joblib.load('/app/multi-sentiment-analysis/justifn models/calib_d1_justifnrf.sav')
+  justifn_xgb = joblib.load('/app/multi-sentiment-analysis/justifn models/calib_d1xgb_justifn.sav')
+  justifn_dtc = joblib.load('/app/multi-sentiment-analysis/justifn models/calib_dtc_justifn.sav')
+  justifn_sgd = joblib.load('/app/multi-sentiment-analysis/justifn models/calib_sgdd1_justifn.sav')
+  justifn_svm = joblib.load('/app/multi-sentiment-analysis/justifn models/calib_svm_d1_justifn.sav')
+  justifn_svmrbf = joblib.load('/app/multi-sentiment-analysis/justifn models/calib_svmrbf_d1_justifn.sav')
+  justifn_meta = joblib.load('/app/multi-sentiment-analysis/justifn models/calib_meta2_lrjustifn.sav')
 
   justifn_cat_pred = justifn_cat.predict_proba(X)[:,1]
   justifn_rf_pred = justifn_rf.predict_proba(X)[:,1]
@@ -377,14 +376,14 @@ def predict(X):
   justifn_meta_preds = np.round(justifn_meta.predict_proba(justifn_meta_array)[:,1],2)
 
   
-  rant_cat = joblib.load('Rant models/calib_catd1_rant.sav')
-  rant_rf = joblib.load('Rant models/calib_d1_rantrf.sav')
-  rant_xgb = joblib.load('Rant models/calib_d1xgb_rant.sav')
-  rant_dtc = joblib.load('Rant models/calib_dtc_rant.sav')
-  rant_sgd = joblib.load('Rant models/calib_sgdd1_rant.sav')
-  rant_svm = joblib.load('Rant models/calib_svm_d1_rant.sav')
-  rant_svmrbf = joblib.load('Rant models/calib_svmrbf_d1_rant.sav')
-  rant_meta = joblib.load('Rant models/calib_meta2_lrrant.sav')
+  rant_cat = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_catd1_rant.sav')
+  rant_rf = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_d1_rantrf.sav')
+  rant_xgb = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_d1xgb_rant.sav')
+  rant_dtc = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_dtc_rant.sav')
+  rant_sgd = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_sgdd1_rant.sav')
+  rant_svm = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_svm_d1_rant.sav')
+  rant_svmrbf = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_svmrbf_d1_rant.sav')
+  rant_meta = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_meta2_lrrant.sav')
 
   rant_cat_pred = rant_cat.predict_proba(X)[:,1]
   rant_rf_pred = rant_rf.predict_proba(X)[:,1]
@@ -401,14 +400,14 @@ def predict(X):
   rant_meta_preds = np.round(rant_meta.predict_proba(rant_meta_array)[:,1],2)
 
   
-  other_cat = joblib.load('other models/calib_catd1_other.sav')
-  other_rf = joblib.load('other models/calib_d1_otherrf.sav')
-  other_xgb = joblib.load('other models/calib_d1xgb_other.sav')
-  other_dtc = joblib.load('other models/calib_dtc_other.sav')
-  other_sgd = joblib.load('other models/calib_sgdd1_other.sav')
-  other_svm = joblib.load('other models/calib_svm_d1_other.sav')
-  other_svmrbf = joblib.load('other models/calib_svmrbf_d1_other.sav')
-  other_meta = joblib.load('other models/calib_meta2_lrother.sav')
+  other_cat = joblib.load('/app/multi-sentiment-analysis/other models/calib_catd1_other.sav')
+  other_rf = joblib.load('/app/multi-sentiment-analysis/other models/calib_d1_otherrf.sav')
+  other_xgb = joblib.load('/app/multi-sentiment-analysis/other models/calib_d1xgb_other.sav')
+  other_dtc = joblib.load('/app/multi-sentiment-analysis/other models/calib_dtc_other.sav')
+  other_sgd = joblib.load('/app/multi-sentiment-analysis/other models/calib_sgdd1_other.sav')
+  other_svm = joblib.load('/app/multi-sentiment-analysis/other models/calib_svm_d1_other.sav')
+  other_svmrbf = joblib.load('/app/multi-sentiment-analysis/other models/calib_svmrbf_d1_other.sav')
+  other_meta = joblib.load('/app/multi-sentiment-analysis/other models/calib_meta2_lrother.sav')
 
   other_cat_pred = other_cat.predict_proba(X)[:,1]
   other_rf_pred = other_rf.predict_proba(X)[:,1]
@@ -425,14 +424,14 @@ def predict(X):
   other_meta_preds = np.round(other_meta.predict_proba(other_meta_array)[:,1],2)
 
   
-  expemo_cat = joblib.load('expemo models/calib_catd1_expemo.sav')
-  expemo_rf = joblib.load('expemo models/calib_d1_expemorf.sav')
-  expemo_xgb = joblib.load('expemo models/calib_d1xgb_expemo.sav')
-  expemo_dtc = joblib.load('expemo models/calib_dtc_expemo.sav')
-  expemo_sgd = joblib.load('expemo models/calib_sgdd1_expemo.sav')
-  expemo_svm = joblib.load('expemo models/calib_svm_d1_expemo.sav')
-  expemo_svmrbf = joblib.load('expemo models/calib_svmrbf_d1_expemo.sav')
-  expemo_meta = joblib.load('expemo models/calib_meta2_lrexpemo.sav')
+  expemo_cat = joblib.load('/app/multi-sentiment-analysis/expemo models/calib_catd1_expemo.sav')
+  expemo_rf = joblib.load('/app/multi-sentiment-analysis/expemo models/calib_d1_expemorf.sav')
+  expemo_xgb = joblib.load('/app/multi-sentiment-analysis/expemo models/calib_d1xgb_expemo.sav')
+  expemo_dtc = joblib.load('/app/multi-sentiment-analysis/expemo models/calib_dtc_expemo.sav')
+  expemo_sgd = joblib.load('/app/multi-sentiment-analysis/expemo models/calib_sgdd1_expemo.sav')
+  expemo_svm = joblib.load('/app/multi-sentiment-analysis/expemo models/calib_svm_d1_expemo.sav')
+  expemo_svmrbf = joblib.load('/app/multi-sentiment-analysis/expemo models/calib_svmrbf_d1_expemo.sav')
+  expemo_meta = joblib.load('/app/multi-sentiment-analysis/expemo models/calib_meta2_lrexpemo.sav')
 
   expemo_cat_pred = expemo_cat.predict_proba(X)[:,1]
   expemo_rf_pred = expemo_rf.predict_proba(X)[:,1]
@@ -474,7 +473,7 @@ def preprocess(X):
   df['GFI'] = pos_cat.get('GFI')
   df['EI'] = pos_cat.get('EI')
   
-  unigram_feat_multi = pickle.load(open('unigram_feat_multi.pkl', 'rb'))
+  unigram_feat_multi = pickle.load(open('/app/multi-sentiment-analysis/unigram_feat_multi.pkl', 'rb'))
   puncs = [i for i in string.punctuation]
   unigram_feat_multi = puncs + list(unigram_feat_multi)
   dictionary_multi = list(unigram_feat_multi)
