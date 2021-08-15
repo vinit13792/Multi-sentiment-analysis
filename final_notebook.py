@@ -285,7 +285,7 @@ def get_pos_vec(df, feature):
 
   return pos_cat
 
-unigram_feat_multi = pickle.load(open('unigram_feat_multi.pkl', 'rb'))
+unigram_feat_multi = pickle.load(open('/app/multi-sentiment-analysis/unigram_feat_multi.pkl', 'rb'))
 
 def text_to_seq(vocab, data):
 
@@ -302,7 +302,7 @@ def text_to_seq(vocab, data):
 
   return np.array(sequences)
 
-normaliser = joblib.load('norm_trans.sav')
+normaliser = joblib.load('/app/multi-sentiment-analysis/norm_trans.sav')
 
 def predict(X):
 
