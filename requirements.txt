@@ -1,10 +1,10 @@
-tensorflow
+tensorflow==2.5.0
 streamlit
 pandas
 numpy
-catboost
-scikit-learn
+catboost==0.26.1
+scikit-learn==0.22.2.post1
 prettytable
-xgboost
+xgboost==0.90
 googledrivedownloader
-nltk
+nltk==3.2.5
