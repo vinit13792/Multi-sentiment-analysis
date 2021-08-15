@@ -71,7 +71,7 @@ gdd.download_file_from_google_drive(file_id='1nZk37wAd4BfUCNrLaquKpfsrXnWLG-Fu',
                                     unzip=True) # normaliser fitted on training data 
 
 
-
+import os
 # All files ending with .txt
 zipfiles = glob.glob("/app/multi-sentiment-analysis/*.zip")
 #st.write(zipfiles[0])
@@ -79,7 +79,7 @@ for file in zipfiles:
     with zipfile.ZipFile(f'{file}', 'r') as zip_ref:
         zip_ref.extractall('/app/multi-sentiment-analysis/')                       
 
-
+st.write(os.getcwd())
 def decontracted(phrase):
     # specific
     phrase = re.sub(r"won't", "will not", phrase)
