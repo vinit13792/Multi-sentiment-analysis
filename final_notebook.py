@@ -73,7 +73,7 @@ gdd.download_file_from_google_drive(file_id='1nZk37wAd4BfUCNrLaquKpfsrXnWLG-Fu',
 
 # All files ending with .txt
 zipfiles = glob.glob("/app/multi-sentiment-analysis/*.zip")
-#st.write(zipfiles)
+st.write(zipfiles)
 for file in zipfiles:
     st.write(file)
     with zipfile.ZipFile(f'{file}', 'r') as zip_ref:
