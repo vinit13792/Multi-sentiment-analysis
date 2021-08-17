@@ -51,8 +51,8 @@ gdd.download_file_from_google_drive(file_id='1Lz-bjuFshJY8LiXFgKpTZodqJqq6IYGX',
 gdd.download_file_from_google_drive(file_id='1rja_wtez5BrfowiXIP91mveDAukMJTjH',
                                     dest_path='/app/multi-sentiment-analysis/justifn models.zip',
                                     unzip=True)
-gdd.download_file_from_google_drive(file_id='1jyhHrzV4n26bamkj9Tlx-C-hI6SSy0DJ',
-                                    dest_path='/app/multi-sentiment-analysis/Rant models.zip',
+gdd.download_file_from_google_drive(file_id='1bijUPhMKDCFzkKnm2udVl9IFtcEyfuc-',
+                                    dest_path='/app/multi-sentiment-analysis/rant models.zip',
                                     unzip=True)
 gdd.download_file_from_google_drive(file_id='19iQ0Weweam2gT5_9P8G6rry6U6fjYpSf',
                                     dest_path='/app/multi-sentiment-analysis/grat models.zip',
@@ -73,7 +73,7 @@ gdd.download_file_from_google_drive(file_id='1nZk37wAd4BfUCNrLaquKpfsrXnWLG-Fu',
 
 # All files ending with .txt
 zipfiles = glob.glob("/app/multi-sentiment-analysis/*.zip")
-st.write(zipfiles[0])
+st.write(zipfiles)
 for file in zipfiles:
     with zipfile.ZipFile(f'{file}', 'r') as zip_ref:
         zip_ref.extractall('/app/multi-sentiment-analysis/')                       
