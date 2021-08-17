@@ -160,7 +160,7 @@ def get_word_count(data, feature):
         counts.append(len(words))
         
     return counts
-global tagged
+
 def pos_count(data, feature):
 
   POS_List = ['JJ', 'JJR', 'JJS', 'NN', 'NNS', 'PRP', 'PRPS', 'RB', 'RBR', 'RP', 'UH', 'VB', 'VBD', 'VBG', 'VBN', 'VBP','VBZ', 'WP', 'WP$']
