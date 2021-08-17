@@ -77,7 +77,7 @@ st.write(zipfiles)
 for file in zipfiles:
     st.write(file)
     with zipfile.ZipFile(f'{file}', 'r') as zip_ref:
-        zip_ref.extractall('/')                       
+        zip_ref.extractall('os.getcwd()')                       
 
 #for file in os.listdir(os.getcwd()):
 #    st.write(file)
