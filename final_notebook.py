@@ -451,10 +451,14 @@ def predict(X):
   
   expemo_meta_preds = np.round(expemo_meta.predict_proba(expemo_meta_array)[:,1],2)
 
-  x = PrettyTable()
-  x.field_names = ['Greeting','Backstory','Justification','Rant','Other','Express Emotion']
-  x.add_row([greet_meta_preds, back_meta_preds, justifn_meta_preds, rant_meta_preds, other_meta_preds, expemo_meta_preds])
-  print(x)
+
+  st.write('Greeting: ', greet_meta_preds[0])
+  st.write('Backstory: ', back_meta_preds[0])
+  st.write('Justification:',justifn_meta_preds[0])
+  st.write('Rant: ',rant_meta_preds[0])
+  st.write('Other: ',other_meta_preds[0])
+  st.write('Express Emotion: ', expemo_meta_preds[0])
+
   return
 
 def preprocess(X):
@@ -506,5 +510,5 @@ def preprocess(X):
 
 X = st.text_input(label='Enter your text here')
 
-st.write(preprocess(X))
+preprocess(X)
 
