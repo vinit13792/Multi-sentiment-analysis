@@ -186,8 +186,7 @@ def pos_count(data, feature):
       # tagger or POS-tagger. 
       tagged = nltk.pos_tag(wordsList)
     
-    info = []
-    for tag in tagged:
+      for tag in tagged:
         info.append(tag[1])
     #print(info)
     
@@ -231,7 +230,7 @@ def get_pos_vec(df, feature):
   for i in range(df.shape[0]):
 
     doc = df[feature].values[i]
-    info =[]
+    pattern =[]
     tokenized = sent_tokenize(doc)
     for i in tokenized:
 
@@ -246,8 +245,8 @@ def get_pos_vec(df, feature):
       # tagger or POS-tagger. 
       tagged = nltk.pos_tag(wordsList)
 
-    pattern = []
-    for tag in tagged:
+      
+      for tag in tagged:
         pattern.append(tag[1]) 
     
     
