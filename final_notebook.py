@@ -381,14 +381,14 @@ def predict(X):
   justifn_meta_preds = np.round(justifn_meta.predict_proba(justifn_meta_array)[:,1],2)
 
   
-  rant_cat = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_catd1_rant.sav')
-  rant_rf = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_d1_rantrf.sav')
-  rant_xgb = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_d1xgb_rant.sav')
-  rant_dtc = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_dtc_rant.sav')
-  rant_sgd = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_sgdd1_rant.sav')
-  rant_svm = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_svm_d1_rant.sav')
-  rant_svmrbf = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_svmrbf_d1_rant.sav')
-  rant_meta = joblib.load('/app/multi-sentiment-analysis/Rant models/calib_meta2_lrrant.sav')
+  rant_cat = joblib.load('/app/multi-sentiment-analysis/rant models/calib_catd1_rant.sav')
+  rant_rf = joblib.load('/app/multi-sentiment-analysis/rant models/calib_d1_rantrf.sav')
+  rant_xgb = joblib.load('/app/multi-sentiment-analysis/rant models/calib_d1xgb_rant.sav')
+  rant_dtc = joblib.load('/app/multi-sentiment-analysis/rant models/calib_dtc_rant.sav')
+  rant_sgd = joblib.load('/app/multi-sentiment-analysis/rant models/calib_sgdd1_rant.sav')
+  rant_svm = joblib.load('/app/multi-sentiment-analysis/rant models/calib_svm_d1_rant.sav')
+  rant_svmrbf = joblib.load('/app/multi-sentiment-analysis/rant models/calib_svmrbf_d1_rant.sav')
+  rant_meta = joblib.load('/app/multi-sentiment-analysis/rant models/calib_meta2_lrrant.sav')
 
   rant_cat_pred = rant_cat.predict_proba(X)[:,1]
   rant_rf_pred = rant_rf.predict_proba(X)[:,1]
