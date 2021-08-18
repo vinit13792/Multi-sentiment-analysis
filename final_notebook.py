@@ -65,10 +65,10 @@ gdd.download_file_from_google_drive(file_id='1pWLS_D8qPkbGHVL7TI0h_KNiVCjTKgdJ',
                                     unzip=True)
 gdd.download_file_from_google_drive(file_id='1bY96HSWMuatJ8cprhWHVcTzUSK8farhh',
                                     dest_path='/app/multi-sentiment-analysis/unigram_feat_multi.pkl',
-                                    unzip=True) # unigram dictionary
+                                    unzip=False) # unigram dictionary
 gdd.download_file_from_google_drive(file_id='1nZk37wAd4BfUCNrLaquKpfsrXnWLG-Fu',
                                     dest_path='/app/multi-sentiment-analysis/norm_trans.sav',
-                                    unzip=True) # normaliser fitted on training data 
+                                    unzip=False) # normaliser fitted on training data 
 
 
 # All files ending with .txt
