@@ -510,8 +510,8 @@ def preprocess(X):
 
 st.title('Multi-sentiment Analysis')
 st.markdown('This project involves sentiment analysis on multiple sentiments. It is an implementation of [this](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8496747) Sep 2019 paper by MONDHER BOUAZIZI AND TOMOAKI OHTSUKI', unsafe_allow_html=True)
-st.markdown('The authors acheived 60.2% overall accuracy on the twitter data, which is phenomenal considering that twitter has limited number of words and extracting meaning out of 
-            those words becomes quite tedious as the person who tweets often has multiple layers of message wrapped in a limited words. ')
+st.markdown('The authors acheived 60.2% overall accuracy on the twitter data, which is phenomenal considering that twitter has limited number of words and extracting meaning out of those words becomes quite tedious as the person who tweets often has multiple layers of message wrapped in a limited words. ')
+
 X = st.text_input(label='Enter your text here')
 
 greet, back, justifn, rant, other, expemo = preprocess(X)
