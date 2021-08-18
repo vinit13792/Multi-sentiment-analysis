@@ -458,15 +458,7 @@ def predict(X):
   
   expemo_meta_preds = np.round(expemo_meta.predict_proba(expemo_meta_array)[:,1],2)
 
-
-  st.write('Greeting: ', greet_meta_preds[0]*100,' %')
-  st.write('Backstory: ', back_meta_preds[0]*100,' %')
-  st.write('Justification:',justifn_meta_preds[0]*100,' %')
-  st.write('Rant: ',rant_meta_preds[0]*100,' %')
-  st.write('Other: ',other_meta_preds[0]*100,' %')
-  st.write('Express Emotion: ', expemo_meta_preds[0]*100, ' %')
-
-  return
+  return greet_meta_preds[0]*100, back_meta_preds[0]*100, justifn_meta_preds[0]*100, rant_meta_preds[0]*100, other_meta_preds[0]*100, expemo_meta_preds[0]*100
 
 @st.cache
 def preprocess(X):
@@ -513,10 +505,16 @@ def preprocess(X):
   query = np.hstack((text_array, data_cols))
   query = normaliser.transform(query)
   
-  predict(query)
-  return
+  greet, back, justifn, rant, other, expemo =  predict(query)
+  return greet, back, justifn, rant, other, expemo
 
 X = st.text_input(label='Enter your text here')
 
-preprocess(X)
+greet, back, justifn, rant, other, expemo = preprocess(X)
 
+st.write('Greeting: ', greet,' %')
+st.write('Backstory: ', back,' %')
+st.write('Justification:',justifn,' %')
+st.write('Rant: ',rant,' %')
+st.write('Other: ',other,' %')
+st.write('Express Emotion: ', expemo, ' %')
