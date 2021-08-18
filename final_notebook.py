@@ -80,6 +80,7 @@ for file in zipfiles:
 
 #for file in os.listdir(os.getcwd()):
 #    st.write(file)
+@st.cache
 def decontracted(phrase):
     # specific
     phrase = re.sub(r"won't", "will not", phrase)
@@ -96,6 +97,7 @@ def decontracted(phrase):
     phrase = re.sub(r"\'m", " am", phrase)
     return phrase
 
+@st.cache
 def Find(string):
   
     # findall() has been used 
@@ -107,6 +109,7 @@ def Find(string):
       temp+=''.join(x[0])
     return temp
 
+@st.cache
 def clean_text(df, feature):
     
     cleaned_text = []
@@ -145,7 +148,7 @@ def clean_text(df, feature):
     return cleaned_text
 
 
-
+@st.cache
 def get_word_count(data, feature):
     
     counts = []
@@ -161,6 +164,7 @@ def get_word_count(data, feature):
         
     return counts
 
+@st.cache
 def pos_count(data, feature):
 
   POS_List = ['JJ', 'JJR', 'JJS', 'NN', 'NNS', 'PRP', 'PRPS', 'RB', 'RBR', 'RP', 'UH', 'VB', 'VBD', 'VBG', 'VBN', 'VBP','VBZ', 'WP', 'WP$']
@@ -208,7 +212,7 @@ def pos_count(data, feature):
   return pos_per_text
 
 
-
+@st.cache
 def check_negation(df):
     
     negex_ = []
@@ -221,6 +225,7 @@ def check_negation(df):
             negex_.append(0)
     return negex_
 
+@st.cache
 def get_pos_vec(df, feature):
   ci = ['CC', 'DT', 'EX', 'IN', 'MD', 'PDT', 'POS', 'RB', 'RBR', 'RBS', 'RP', 'TO', 'WDT', 'WP', 'WP$', 'WRB']
   gfi = ['CD', 'FW', 'LS', 'NNP', 'NNPS', 'PRP', 'PRP$', 'SYM', 'UH']
@@ -291,6 +296,7 @@ def get_pos_vec(df, feature):
 
 unigram_feat_multi = pickle.load(open('/app/multi-sentiment-analysis/unigram_feat_multi.pkl', 'rb'))
 
+@st.cache
 def text_to_seq(vocab, data):
 
   sequences = []
@@ -308,6 +314,7 @@ def text_to_seq(vocab, data):
 
 normaliser = joblib.load('/app/multi-sentiment-analysis/norm_trans.sav')
 
+@st.cache
 def predict(X):
 
   #greet_cat = joblib.load('content/greet models/calib_catd1_greet.sav')
@@ -452,15 +459,16 @@ def predict(X):
   expemo_meta_preds = np.round(expemo_meta.predict_proba(expemo_meta_array)[:,1],2)
 
 
-  st.write('Greeting: ', greet_meta_preds[0])
-  st.write('Backstory: ', back_meta_preds[0])
-  st.write('Justification:',justifn_meta_preds[0])
-  st.write('Rant: ',rant_meta_preds[0])
-  st.write('Other: ',other_meta_preds[0])
-  st.write('Express Emotion: ', expemo_meta_preds[0])
+  st.write('Greeting: ', greet_meta_preds[0]*100,' %')
+  st.write('Backstory: ', back_meta_preds[0]*100,' %')
+  st.write('Justification:',justifn_meta_preds[0]*100,' %')
+  st.write('Rant: ',rant_meta_preds[0]*100,' %')
+  st.write('Other: ',other_meta_preds[0]*100,' %')
+  st.write('Express Emotion: ', expemo_meta_preds[0]*100, ' %')
 
   return
 
+@st.cache
 def preprocess(X):
 
   POS_List = ['JJ', 'JJR', 'JJS', 'NN', 'NNS', 'PRP', 'PRPS', 'RB', 'RBR', 'RP', 'UH', 'VB', 'VBD', 'VBG', 'VBN', 'VBP','VBZ', 'WP', 'WP$']
