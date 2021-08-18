@@ -509,7 +509,7 @@ def preprocess(X):
   return greet, back, justifn, rant, other, expemo
 
 st.title('Multi-sentiment Analysis and Prediction on TripAdvisor data.')
-st.markdown('This project involves sentiment analysis on multiple sentiments. It is an implementation of [this](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8496747) Sep 2019 paper by MONDHER BOUAZIZI AND TOMOAKI OHTSUKI', unsafe_allow_html=True)
+st.markdown('This project involves sentiment analysis and prediction of multiple sentiments. It is an implementation of [this](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8496747) Sep 2019 paper by MONDHER BOUAZIZI AND TOMOAKI OHTSUKI', unsafe_allow_html=True)
 st.markdown('The authors acheived 60.2% overall accuracy on the twitter data, which is phenomenal considering that twitter has limited number of words and extracting meaning out of those words becomes quite tedious as the person who tweets often has multiple layers of message wrapped in a limited words. ')
 st.markdown('The main purpose of this project is to showcase that even though the techniques used by the author involved predictions on twitter data, the same techniques can be used in travel industry to identify the sentiments carried by the customers who post on the travel forums, regarding their ticket bookings, or flight plans. Customers often post a query and wait eagerly for a reply by the travel agency rep. We can use this to post a response taking in consideration the emotion a customer has and respond until a rep gets in touch with them. This way a customer wont have to wait longer.') 
 X = st.text_input(label='Enter your text here')
