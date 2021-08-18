@@ -509,7 +509,7 @@ def preprocess(X):
   return greet, back, justifn, rant, other, expemo
 
 st.title('Multi-sentiment Analysis')
-st.markdown('This project involves sentiment analysis on multiple sentiments. It is a implementation of https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8496747 by MONDHER BOUAZIZI AND TOMOAKI OHTSUKI', unsafe_allow_html=True)
+st.markdown('This project involves sentiment analysis on multiple sentiments. It is a implementation of [link](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8496747) by MONDHER BOUAZIZI AND TOMOAKI OHTSUKI', unsafe_allow_html=True)
 X = st.text_input(label='Enter your text here')
 
 greet, back, justifn, rant, other, expemo = preprocess(X)
