@@ -9,3 +9,4 @@ googledrivedownloader
 nltk==3.2.5
 setuptools
 spacy-streamlit
+spacy==3.1
