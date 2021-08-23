@@ -516,7 +516,6 @@ st.markdown('The main purpose of this project is to showcase that even though th
 X = st.text_input(label='Enter your text here')
 
 import spacy_streamlit
-!python -m spacy download en_core_web_sm
 
 models = ["en_core_web_sm"]#, "en_core_web_md"]
 
