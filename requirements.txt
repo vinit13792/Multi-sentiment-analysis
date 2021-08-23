@@ -8,5 +8,5 @@ xgboost==0.90
 googledrivedownloader
 nltk==3.2.5
 setuptools
-spacy-streamlit
+spacy-streamlit --pre
 spacy==3.1
