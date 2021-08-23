@@ -15,8 +15,6 @@ nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('wordnet')
 from nltk.corpus import stopwords
-import spacy
-from spacy import displacy
 
 import streamlit as st
 import joblib
