@@ -495,7 +495,7 @@ def preprocess(X):
       else:
         word_index_multi[dictionary_multi[i]]=i+1
   # Based on max length of sentences in training data
-  maxlen = 265
+  maxlen = 264
 
   text_array = text_to_seq(word_index_multi, df)
   text_array = pad_sequences(text_array, maxlen=maxlen, dtype='int32', padding='pre',truncating='post')
