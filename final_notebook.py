@@ -25,7 +25,6 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression, SGDClassifier
 from sklearn.model_selection import RandomizedSearchCV
 from xgboost import XGBClassifier
-import catboost
 from collections import defaultdict, Counter
 from sklearn.svm import SVC
 from sklearn.calibration import CalibratedClassifierCV
