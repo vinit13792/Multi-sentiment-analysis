@@ -337,7 +337,7 @@ def predict(X):
                             greet_xgb_pred.reshape(-1,1),  greet_sgd_pred.reshape(-1,1), 
                           greet_lr_pred.reshape(-1,1), greet_gnb_pred.reshape(-1,1))) #greet_cat_pred.reshape(-1,1), 
   
-  greet_meta_preds = np.round(greet_meta.predict_proba(greet_meta_array)[:,1],2)
+  greet_meta_preds = greet_meta.predict_proba(greet_meta_array)
 
   #back_cat = joblib.load('content/backstory models/calib_catd1_back.sav')
   #back_rf = joblib.load('content/backstory models/calib_d1_backrf.sav')
