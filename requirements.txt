@@ -7,5 +7,5 @@ prettytable
 xgboost==0.90
 googledrivedownloader
 nltk==3.2.5
-spacy==3.1
 setuptools
+spacy-streamlit
