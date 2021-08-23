@@ -514,12 +514,8 @@ st.markdown('This project involves sentiment analysis and prediction of multiple
 st.markdown('The authors acheived 60.2% overall accuracy on the twitter data, which is phenomenal considering that twitter has limited number of words and extracting meaning out of those words becomes quite tedious as the person who tweets often has multiple layers of message wrapped in a limited words. ')
 st.markdown('The main purpose of this project is to showcase that even though the techniques used by the author involved predictions on twitter data, the same techniques can be used in travel industry to identify the sentiments carried by the customers who post on the travel forums, regarding their ticket bookings, or flight plans. Customers often post a query and wait eagerly for a reply by the travel agency rep. We can use this to post a response taking in consideration the emotion a customer has and respond until a rep gets in touch with them. This way a customer wont have to wait longer.') 
 
-@st.cache(allow_output_mutation=True, suppress_st_warning=True)
-def take_input():
-    X = st.text_input(label='Enter your text here')
-    return X
+X = st.text_input(label='Enter your text here')
 
-X = take_input()
 greet, back, justifn, rant, other, expemo = preprocess(X)
 
 st.write('Greeting: ', greet,' %')
