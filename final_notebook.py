@@ -514,7 +514,7 @@ st.markdown('The main purpose of this project is to showcase that even though th
 st.markdown("I acheived 82% overall accuracy on this dataset which consists of data from TripAdvisor.com airline forum, Train travel IVA, Airline travel IVA, Telecommunications support IVA. I believe the same accuracy can be acheived by using this strategy in any of the NLP pipelines to improve the accuracy of IVA agents and response of the agents.")
 st.markdown('This pipeline can be used for intent classification or text annotation internally at above mentioned web companies. The preprocessing and prediction pipeline takes under 1 sec to run.')
 st.markdown('Since large firms like above can afford annotators or can outsource that work, the above pipeline can reduce the annotation task and cost for firms who had their data annotated once and want to save cost on future annotations.')
-st.markdown('The training data was annotated by expert annotators in this field. So the training data is a high quality human annotated data. Training and validation on such data gave us 82% overall accuracy across all the emotions in the dataset. We can extend this work for intent classification as well by figuring out important words in a sentence.')
+st.markdown('The training data was annotated by expert annotators in this field. So the training data is a high quality human annotated data. Training and validation on such data gave us 82% overall accuracy across all the emotions in the dataset. This work can be extended for intent classification as well by figuring out important words in a sentence.')
 
 X = st.text_input(label='Enter your text here')
 
