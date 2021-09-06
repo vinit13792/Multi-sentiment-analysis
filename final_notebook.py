@@ -332,10 +332,10 @@ def predict(X):
   #greet_rf = joblib.load('content/greet models/calib_d1_greetrf.sav')
   greet_xgb = joblib.load('/app/multi-sentiment-analysis/calib_d1xgb_greet.sav')
   #greet_dtc = joblib.load('content/greet models/calib_dtc_greet.sav')
-  greet_sgd = joblib.load('/app/multi-sentiment-analysis/greet models/calib_sgdd1_greet.sav')
-  greet_lr = joblib.load('/app/multi-sentiment-analysis/greet models/calib_lr_d1_greet.sav')
-  greet_gnb = joblib.load('/app/multi-sentiment-analysis/greet models/calib_gnb_d1_greet.sav')
-  greet_meta = joblib.load('/app/multi-sentiment-analysis/greet models/calib_meta_lrgreet.sav')
+  greet_sgd = joblib.load('/app/multi-sentiment-analysis/calib_sgdd1_greet.sav')
+  greet_lr = joblib.load('/app/multi-sentiment-analysis/calib_lr_d1_greet.sav')
+  greet_gnb = joblib.load('/app/multi-sentiment-analysis/calib_gnb_d1_greet.sav')
+  greet_meta = joblib.load('/app/multi-sentiment-analysis/calib_meta_lrgreet.sav')
 
   #greet_cat_pred = greet_cat.predict_proba(X)[:,1]
   #greet_rf_pred = greet_rf.predict_proba(X)[:,1]
@@ -353,12 +353,12 @@ def predict(X):
 
   #back_cat = joblib.load('content/backstory models/calib_catd1_back.sav')
   #back_rf = joblib.load('content/backstory models/calib_d1_backrf.sav')
-  back_xgb = joblib.load('/app/multi-sentiment-analysis/backstory models/calib_d1xgb_back.sav')
+  back_xgb = joblib.load('/app/multi-sentiment-analysis/calib_d1xgb_back.sav')
   #back_dtc = joblib.load('content/backstory models/calib_dtc_back.sav')
-  back_sgd = joblib.load('/app/multi-sentiment-analysis/backstory models/calib_sgdd1_back.sav')
-  back_lr = joblib.load('/app/multi-sentiment-analysis/backstory models/calib_lr_d1_back.sav')
-  back_gnb = joblib.load('/app/multi-sentiment-analysis/backstory models/calib_gnb_d1_back.sav')
-  back_meta = joblib.load('/app/multi-sentiment-analysis/backstory models/calib_meta2_lrback.sav')
+  back_sgd = joblib.load('/app/multi-sentiment-analysis/calib_sgdd1_back.sav')
+  back_lr = joblib.load('/app/multi-sentiment-analysis/calib_lr_d1_back.sav')
+  back_gnb = joblib.load('/app/multi-sentiment-analysis/calib_gnb_d1_back.sav')
+  back_meta = joblib.load('/app/multi-sentiment-analysis/calib_meta2_lrback.sav')
 
   #back_cat_pred = back_cat.predict_proba(X)[:,1]
   #back_rf_pred = back_rf.predict_proba(X)[:,1]
@@ -376,12 +376,12 @@ def predict(X):
 
   #justifn_cat = joblib.load('content/justifn models/calib_catd1_justifn.sav')
   #justifn_rf = joblib.load('content/justifn models/calib_d1_justifnrf.sav')
-  justifn_xgb = joblib.load('/app/multi-sentiment-analysis/justifn models/calib_d1xgb_justifn.sav')
+  justifn_xgb = joblib.load('/app/multi-sentiment-analysis/calib_d1xgb_justifn.sav')
   #justifn_dtc = joblib.load('content/justifn models/calib_dtc_justifn.sav')
-  justifn_sgd = joblib.load('/app/multi-sentiment-analysis/justifn models/calib_sgdd1_justifn.sav')
-  justifn_lr = joblib.load('/app/multi-sentiment-analysis/justifn models/calib_lr_d1_justifn.sav')
-  justifn_gnb = joblib.load('/app/multi-sentiment-analysis/justifn models/calib_gnb_d1_justifn.sav')
-  justifn_meta = joblib.load('/app/multi-sentiment-analysis/justifn models/calib_meta2_lrjustifn.sav')
+  justifn_sgd = joblib.load('/app/multi-sentiment-analysis/calib_sgdd1_justifn.sav')
+  justifn_lr = joblib.load('/app/multi-sentiment-analysis/calib_lr_d1_justifn.sav')
+  justifn_gnb = joblib.load('/app/multi-sentiment-analysis/calib_gnb_d1_justifn.sav')
+  justifn_meta = joblib.load('/app/multi-sentiment-analysis/calib_meta2_lrjustifn.sav')
 
   #justifn_cat_pred = justifn_cat.predict_proba(X)[:,1]
   #justifn_rf_pred = justifn_rf.predict_proba(X)[:,1]
@@ -400,12 +400,12 @@ def predict(X):
   
   #rant_cat = joblib.load('content/rant models/calib_catd1_rant.sav')
   #rant_rf = joblib.load('content/rant models/calib_d1_rantrf.sav')
-  rant_xgb = joblib.load('/app/multi-sentiment-analysis/rant models/calib_d1xgb_rant.sav')
+  rant_xgb = joblib.load('/app/multi-sentiment-analysis/calib_d1xgb_rant.sav')
   #rant_dtc = joblib.load('content/rant models/calib_dtc_rant.sav')
-  rant_sgd = joblib.load('/app/multi-sentiment-analysis/rant models/calib_sgdd1_rant.sav')
-  rant_lr = joblib.load('/app/multi-sentiment-analysis/rant models/calib_lr_d1_rant.sav')
-  rant_gnb = joblib.load('/app/multi-sentiment-analysis/rant models/calib_gnb_d1_rant.sav')
-  rant_meta = joblib.load('/app/multi-sentiment-analysis/rant models/calib_meta2_lrrant.sav')
+  rant_sgd = joblib.load('/app/multi-sentiment-analysis/calib_sgdd1_rant.sav')
+  rant_lr = joblib.load('/app/multi-sentiment-analysis/calib_lr_d1_rant.sav')
+  rant_gnb = joblib.load('/app/multi-sentiment-analysis/calib_gnb_d1_rant.sav')
+  rant_meta = joblib.load('/app/multi-sentiment-analysis/calib_meta2_lrrant.sav')
 
   #rant_cat_pred = rant_cat.predict_proba(X)[:,1]
   #rant_rf_pred = rant_rf.predict_proba(X)[:,1]
@@ -424,12 +424,12 @@ def predict(X):
   
   #other_cat = joblib.load('content/other models/calib_catd1_other.sav')
   #other_rf = joblib.load('content/other models/calib_d1_otherrf.sav')
-  other_xgb = joblib.load('/app/multi-sentiment-analysis/other models/calib_d1xgb_other.sav')
+  other_xgb = joblib.load('/app/multi-sentiment-analysis/calib_d1xgb_other.sav')
   #other_dtc = joblib.load('content/other models/calib_dtc_other.sav')
-  other_sgd = joblib.load('/app/multi-sentiment-analysis/other models/calib_sgdd1_other.sav')
-  other_lr = joblib.load('/app/multi-sentiment-analysis/other models/calib_lr_d1_other.sav')
-  other_gnb = joblib.load('/app/multi-sentiment-analysis/other models/calib_gnb_d1_other.sav')
-  other_meta = joblib.load('/app/multi-sentiment-analysis/other models/calib_meta2_lrother.sav')
+  other_sgd = joblib.load('/app/multi-sentiment-analysis/calib_sgdd1_other.sav')
+  other_lr = joblib.load('/app/multi-sentiment-analysis/calib_lr_d1_other.sav')
+  other_gnb = joblib.load('/app/multi-sentiment-analysis/calib_gnb_d1_other.sav')
+  other_meta = joblib.load('/app/multi-sentiment-analysis/calib_meta2_lrother.sav')
 
   #other_cat_pred = other_cat.predict_proba(X)[:,1]
   #other_rf_pred = other_rf.predict_proba(X)[:,1]
@@ -448,12 +448,12 @@ def predict(X):
   
   #expemo_cat = joblib.load('content/expemo models/calib_catd1_expemo.sav')
   #expemo_rf = joblib.load('content/expemo models/calib_d1_expemorf.sav')
-  expemo_xgb = joblib.load('/app/multi-sentiment-analysis/expemo models/calib_d1xgb_expemo.sav')
+  expemo_xgb = joblib.load('/app/multi-sentiment-analysis/calib_d1xgb_expemo.sav')
   #expemo_dtc = joblib.load('content/expemo models/calib_dtc_expemo.sav')
-  expemo_sgd = joblib.load('/app/multi-sentiment-analysis/expemo models/calib_sgdd1_expemo.sav')
-  expemo_lr = joblib.load('/app/multi-sentiment-analysis/expemo models/calib_lr_d1_expemo.sav')
-  expemo_gnb = joblib.load('/app/multi-sentiment-analysis/expemo models/calib_gnb_d1_expemo.sav')
-  expemo_meta = joblib.load('/app/multi-sentiment-analysis/expemo models/calib_meta2_lrexpemo.sav')
+  expemo_sgd = joblib.load('/app/multi-sentiment-analysis/calib_sgdd1_expemo.sav')
+  expemo_lr = joblib.load('/app/multi-sentiment-analysis/calib_lr_d1_expemo.sav')
+  expemo_gnb = joblib.load('/app/multi-sentiment-analysis/calib_gnb_d1_expemo.sav')
+  expemo_meta = joblib.load('/app/multi-sentiment-analysis/calib_meta2_lrexpemo.sav')
 
   #expemo_cat_pred = expemo_cat.predict_proba(X)[:,1]
   #expemo_rf_pred = expemo_rf.predict_proba(X)[:,1]
