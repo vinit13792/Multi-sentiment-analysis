@@ -41,6 +41,7 @@ import glob
     
 stop_words = set(stopwords.words('english'))
 
+#save
 gdd.download_file_from_google_drive(file_id='1aQ7Ns6DYhq3MKSoeQEG3gl7OLKgtRT44',
                                     dest_path='/app/multi-sentiment-analysis/greet models.zip',
                                     unzip=True)
