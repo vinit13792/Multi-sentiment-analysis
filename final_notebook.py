@@ -65,6 +65,16 @@ gdd.download_file_from_google_drive(file_id='1pWLS_D8qPkbGHVL7TI0h_KNiVCjTKgdJ',
 gdd.download_file_from_google_drive(file_id='1bY96HSWMuatJ8cprhWHVcTzUSK8farhh',
                                     dest_path='/app/multi-sentiment-analysis/unigram_feat_multi.pkl',
                                     unzip=False) # unigram dictionary
+
+gdd.download_file_from_google_drive(file_id='1j3MNsNB4du53VlLHrfKgowXFAmhXrRVi',
+                                    dest_path='/app/multi-sentiment-analysis/select_k.sav',
+                                    unzip=False) # normaliser fitted on training data 
+
+gdd.download_file_from_google_drive(file_id='1KLIH1mhEKqCl4OymTOkl4ChG_b511TfD',
+                                    dest_path='/app/multi-sentiment-analysis/tf_model.sav',
+                                    unzip=False) # normaliser fitted on training data
+
+
 gdd.download_file_from_google_drive(file_id='1nZk37wAd4BfUCNrLaquKpfsrXnWLG-Fu',
                                     dest_path='/app/multi-sentiment-analysis/norm_trans.sav',
                                     unzip=False) # normaliser fitted on training data 
@@ -492,6 +502,14 @@ def preprocess(X):
         word_index_multi['OOV'] = 1
       else:
         word_index_multi[dictionary_multi[i]]=i+1
+        
+  select_k_best = joblib.load('/app/multi-sentiment-analysis/select_k.sav')
+  tf_model = joblib.load('/app/multi-sentiment-analysis/tf_model.sav')
+    
+  tf_arr = tf_model.transform(df['Clean Text'].values)
+  tf_arr = tf_arr.toarray()
+  
+  
   # Based on max length of sentences in training data
   maxlen = 264
 
@@ -503,6 +521,7 @@ def preprocess(X):
 
   query = np.hstack((text_array, data_cols))
   query = normaliser.transform(query)
+  query = select_k_best.tranform(query)
   
   greet, back, justifn, rant, other, expemo =  predict(query)
   return greet, back, justifn, rant, other, expemo
