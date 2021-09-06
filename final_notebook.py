@@ -90,7 +90,7 @@ for file in zipfiles:
  
 #for file in os.listdir(os.getcwd()):
 #    st.write(file)
-st.write(os.getcwd())
+#st.write(os.getcwd())
 @st.cache
 def decontracted(phrase):
     # specific
@@ -330,7 +330,7 @@ def predict(X):
 
   #greet_cat = joblib.load('content/greet models/calib_catd1_greet.sav')
   #greet_rf = joblib.load('content/greet models/calib_d1_greetrf.sav')
-  greet_xgb = joblib.load('/app/multi-sentiment-analysis/greet models/calib_d1xgb_greet.sav')
+  greet_xgb = joblib.load('/app/multi-sentiment-analysis/calib_d1xgb_greet.sav')
   #greet_dtc = joblib.load('content/greet models/calib_dtc_greet.sav')
   greet_sgd = joblib.load('/app/multi-sentiment-analysis/greet models/calib_sgdd1_greet.sav')
   greet_lr = joblib.load('/app/multi-sentiment-analysis/greet models/calib_lr_d1_greet.sav')
