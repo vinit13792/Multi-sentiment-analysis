@@ -521,7 +521,8 @@ def preprocess(X):
 
   query = np.hstack((text_array,tf_arr, data_cols))
   query = normaliser.transform(query)
-  query = select_k_best.tranform(query)
+  
+  query = select_k_best.transform(query)
   
   greet, back, justifn, rant, other, expemo =  predict(query)
   return greet, back, justifn, rant, other, expemo
