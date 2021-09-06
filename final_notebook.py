@@ -88,8 +88,9 @@ for file in zipfiles:
     with zipfile.ZipFile(f'{file}', 'r') as zip_ref:
         zip_ref.extractall()
  
-for file in os.listdir(os.getcwd()):
-    st.write(file)
+#for file in os.listdir(os.getcwd()):
+#    st.write(file)
+st.write(os.getcwd())
 @st.cache
 def decontracted(phrase):
     # specific
