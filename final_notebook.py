@@ -519,7 +519,7 @@ def preprocess(X):
   keep_columns = list(df.columns[1:])
   data_cols = df[keep_columns].values
 
-  query = np.hstack((text_array, data_cols))
+  query = np.hstack((text_array,tf_arr, data_cols))
   query = normaliser.transform(query)
   query = select_k_best.tranform(query)
   
@@ -530,7 +530,7 @@ st.title('Multi-sentiment Classification on Intelligent Virtual Agent data.')
 st.markdown('This project involves sentiment analysis and prediction of multiple sentiments. It is an implementation of [this](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8496747) Sep 2019 paper by MONDHER BOUAZIZI AND TOMOAKI OHTSUKI', unsafe_allow_html=True)
 st.markdown('The authors acheived 60.2% overall accuracy on the twitter data, which is phenomenal considering that twitter has limited number of words and extracting meaning out of those words becomes quite tedious as the person who tweets often has multiple layers of message wrapped in a limited words. ')
 st.markdown('The main purpose of this project is to showcase that even though the techniques used by the author involved predictions on twitter data, the same techniques can be used in travel industry to identify the sentiments carried by the customers who post on the travel forums, regarding their ticket bookings, or flight plans. Customers often post a query and wait eagerly for a reply by the travel agency rep. We can use this to post a response taking in consideration the emotion a customer has and respond until a rep gets in touch with them. This way a customer wont have to wait longer.') 
-st.markdown("I acheived 82% overall accuracy on this dataset which consists of data from TripAdvisor.com airline forum, Train travel IVA, Airline travel IVA, Telecommunications support IVA. I believe the same accuracy can be acheived by using this strategy in any of the NLP pipelines to improve the accuracy of IVA agents and response of the agents.")
+st.markdown("I acheived 86% overall accuracy on this dataset which consists of data from TripAdvisor.com airline forum, Train travel IVA, Airline travel IVA, Telecommunications support IVA. I believe the same accuracy can be acheived by using this strategy in any of the NLP pipelines to improve the accuracy of IVA agents and response of the agents.")
 st.markdown('This pipeline can be used for intent classification or text annotation internally at above mentioned web companies. The preprocessing and prediction pipeline takes under 1 sec to run.')
 st.markdown('Since large firms like above can afford annotators or can outsource that work, the above pipeline can reduce the annotation task and cost for firms who had their data annotated once and want to save cost on future annotations.')
 st.markdown('The training data was annotated by expert annotators in this field. So the training data is a high quality human annotated data. Training and validation on such data gave us 82% overall accuracy across all the emotions in the dataset. This work can be extended for intent classification as well by figuring out important words in a sentence.')
